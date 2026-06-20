@@ -369,6 +369,41 @@
                 transform: translateY(0);
             }
         }
+
+        /* -- MOBILE RESPONSIVENESS -- */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: clamp(2.5rem, 12vw, 5rem);
+                word-wrap: break-word;
+            }
+            .hero h2 {
+                font-size: 1.2rem;
+            }
+            .hero p {
+                font-size: 1.1rem;
+            }
+            .section h2 {
+                font-size: 2.2rem;
+            }
+            .final-message h2 {
+                font-size: 2.5rem;
+            }
+            .final-message p {
+                font-size: 1.1rem;
+            }
+            .card h3 {
+                font-size: 1.4rem;
+            }
+            .card p {
+                font-size: 1rem;
+            }
+            .section {
+                padding: 60px 5%;
+            }
+            .gallery {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+        }
     </style>
 </head>
 
