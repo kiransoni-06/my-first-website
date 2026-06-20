@@ -1,310 +1,552 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Bhavna ❤️</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Matashree ❤️</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
-body{
-    background:linear-gradient(135deg,#fff0f5,#ffe4e1);
-    overflow-x:hidden;
-    color:#333;
-}
+        body {
+            /* We preserve the background image */
+            background: url('4.jpeg') center 20%/cover no-repeat fixed;
+            overflow-x: hidden;
+            color: #f1f1f1;
+            /* Light text for dark glass */
+        }
 
-.hero{
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:40px;
-}
+        /* Full page overlay to make dark glass pop */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(10, 10, 15, 0.65);
+            z-index: -1;
+        }
 
-.hero h1{
-    font-size:4rem;
-    color:#d63384;
-    animation:fadeIn 2s ease;
-}
+        /* Base Glass Effect */
+        .card,
+        .event,
+        .photo,
+        .lightbox-content,
+        .final-message {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
 
-.hero h2{
-    margin-top:10px;
-    color:#666;
-    font-weight:400;
-}
+        /* -- HERO SECTION -- */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px;
+        }
 
-.hero p{
-    margin-top:25px;
-    max-width:800px;
-    line-height:1.8;
-    font-size:1.15rem;
-}
+        .hero h1 {
+            font-size: 5rem;
+            color: #ff9ecd;
+            text-shadow: 0 0 25px rgba(255, 158, 205, 0.5);
+            animation: fadeIn 2s ease;
+            letter-spacing: 2px;
+        }
 
-.btn{
-    margin-top:35px;
-    padding:15px 35px;
-    border:none;
-    border-radius:40px;
-    background:#d63384;
-    color:white;
-    font-size:1rem;
-    cursor:pointer;
-    transition:0.3s;
-}
+        .hero h2 {
+            margin-top: 15px;
+            color: #d1d1d1;
+            font-weight: 300;
+            letter-spacing: 1px;
+            font-size: 1.5rem;
+        }
 
-.btn:hover{
-    transform:scale(1.08);
-}
+        .hero p {
+            margin-top: 30px;
+            max-width: 800px;
+            line-height: 1.8;
+            font-size: 1.25rem;
+            color: #e0e0e0;
+        }
 
-.section{
-    padding:80px 10%;
-}
+        .btn {
+            margin-top: 40px;
+            padding: 15px 40px;
+            border: 1px solid rgba(255, 158, 205, 0.4);
+            border-radius: 40px;
+            background: rgba(255, 158, 205, 0.1);
+            color: #ff9ecd;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(5px);
+        }
 
-.section h2{
-    text-align:center;
-    margin-bottom:50px;
-    color:#d63384;
-    font-size:2.5rem;
-}
+        .btn:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 158, 205, 0.25);
+            box-shadow: 0 10px 25px rgba(255, 158, 205, 0.3);
+        }
 
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
-}
+        /* -- SECTIONS -- */
+        .section {
+            padding: 100px 10%;
+        }
 
-.card{
-    background:white;
-    padding:30px;
-    border-radius:20px;
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
-    transition:.4s;
-}
+        .section h2 {
+            text-align: center;
+            margin-bottom: 60px;
+            color: #ff9ecd;
+            font-size: 3rem;
+            text-shadow: 0 0 15px rgba(255, 158, 205, 0.3);
+            font-weight: 600;
+        }
 
-.card:hover{
-    transform:translateY(-10px);
-}
+        /* -- CARDS -- */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 35px;
+        }
 
-.card h3{
-    margin-bottom:15px;
-    color:#d63384;
-}
+        .card {
+            padding: 40px 30px;
+            border-radius: 25px;
+            transition: transform 0.4s ease, background 0.4s ease, border-color 0.4s;
+            text-align: center;
+        }
 
-.timeline{
-    max-width:900px;
-    margin:auto;
-}
+        .card:hover {
+            transform: translateY(-15px);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 158, 205, 0.4);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+        }
 
-.event{
-    background:white;
-    margin:20px 0;
-    padding:20px;
-    border-left:5px solid #d63384;
-    border-radius:10px;
-}
+        .card h3 {
+            margin-bottom: 20px;
+            color: #ff9ecd;
+            font-size: 1.6rem;
+        }
 
-.gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-}
+        .card p {
+            line-height: 1.7;
+            font-size: 1.1rem;
+            color: #ccc;
+        }
 
-.photo{
-    height:300px;
-    border-radius:20px;
-    overflow:hidden;
-    background:#fff;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:1.1rem;
-    color:#888;
-    box-shadow:0 8px 20px rgba(0,0,0,.08);
-}
+        /* -- TIMELINE -- */
+        .timeline {
+            max-width: 900px;
+            margin: auto;
+            position: relative;
+        }
 
-.final-message{
-    text-align:center;
-    padding:100px 20px;
-}
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: rgba(255, 158, 205, 0.3);
+        }
 
-.final-message h2{
-    font-size:3rem;
-    color:#d63384;
-}
+        .event {
+            margin: 30px 0 30px 50px;
+            padding: 25px 30px;
+            border-radius: 20px;
+            position: relative;
+            font-size: 1.15rem;
+            color: #eee;
+        }
 
-.final-message p{
-    max-width:800px;
-    margin:20px auto;
-    line-height:1.8;
-    font-size:1.2rem;
-}
+        .event::before {
+            content: '';
+            position: absolute;
+            left: -38px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #ff9ecd;
+            box-shadow: 0 0 15px #ff9ecd;
+        }
 
-footer{
-    text-align:center;
-    padding:30px;
-    background:#d63384;
-    color:white;
-}
+        /* -- GALLERY -- */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
 
-.heart{
-    position:fixed;
-    top:-20px;
-    font-size:20px;
-    animation:fall linear infinite;
-    opacity:.7;
-}
+        .photo {
+            height: 320px;
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            color: transparent;
+            /* hides placeholder text if any */
+        }
 
-@keyframes fall{
-    to{
-        transform:translateY(110vh);
-    }
-}
+        .photo::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, rgba(255, 158, 205, 0.3));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
 
-@keyframes fadeIn{
-    from{
-        opacity:0;
-        transform:translateY(30px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-</style>
+        .photo:hover {
+            transform: scale(1.05) translateY(-5px);
+            border-color: rgba(255, 158, 205, 0.6);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        .photo:hover::after {
+            opacity: 1;
+        }
+
+        .photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .photo:hover img {
+            transform: scale(1.1);
+        }
+
+        /* -- LIGHTBOX -- */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+
+        .lightbox.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .lightbox-content {
+            padding: 10px;
+            border-radius: 20px;
+            min-width: 300px;
+            min-height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: scale(0.9);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .lightbox.active .lightbox-content {
+            transform: scale(1);
+        }
+
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 85vh;
+            object-fit: contain;
+            border-radius: 12px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 50px;
+            cursor: pointer;
+            transition: color 0.3s ease, transform 0.3s ease;
+            z-index: 10000;
+        }
+
+        .close-btn:hover {
+            color: #ff9ecd;
+            transform: scale(1.2);
+        }
+
+        /* -- FINAL MESSAGE -- */
+        .final-message {
+            text-align: center;
+            padding: 80px 40px;
+            margin: 50px auto 100px;
+            max-width: 900px;
+            border-radius: 40px;
+        }
+
+        .final-message h2 {
+            font-size: 3.5rem;
+            color: #ff9ecd;
+            text-shadow: 0 0 20px rgba(255, 158, 205, 0.4);
+            margin-bottom: 30px;
+        }
+
+        .final-message p {
+            line-height: 1.9;
+            font-size: 1.35rem;
+            color: #eee;
+        }
+
+        /* -- FOOTER -- */
+        footer {
+            text-align: center;
+            padding: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        /* -- ANIMATIONS -- */
+        .heart {
+            position: fixed;
+            top: -20px;
+            font-size: 24px;
+            animation: fall linear infinite;
+            opacity: .5;
+            filter: drop-shadow(0 0 10px rgba(255, 158, 205, 0.6));
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(110vh) rotate(360deg);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-<div class="hero">
-    <h1>For Bhavna ❤️</h1>
-    <h2>The Woman Who Was Both My Mother and My Father</h2>
+    <div class="hero">
+        <h1>For Matashree ❤️</h1>
+        <h2>The Woman Who Was Both My Mother and My Father</h2>
 
-    <p>
-        Dear Mom,
-        At 19 years old, I finally understand a little more of the
-        sacrifices you made for me.
-        You carried responsibilities that belonged to two people,
-        yet you never stopped smiling, loving, and believing in me.
-        This page is a small tribute to the strongest person I know.
-    </p>
+        <p>
+            Dear Mom,
+            19 saal ki umar mein, aakhirkar mujhe thoda aur samajh aaya hai
+            un sacrifices ke baare mein jo aapne mere liye kiye hain.
+            Aapne do logon ki responsibilities akele nibhayi,
+            phir bhi aapne kabhi muskurana, pyaar karna aur mujh par bharosa rakhna nahi chhoda.
+            Yeh page us sabse strong insaan ke liye ek chhota sa tribute hai jo mere liye bahut khaas hai.
+        </p>
 
-    <button class="btn" onclick="document.getElementById('journey').scrollIntoView({behavior:'smooth'})">
-        Our Journey ↓
-    </button>
-</div>
-
-<section class="section">
-    <h2>What Makes You Special</h2>
-
-    <div class="cards">
-        <div class="card">
-            <h3>💪 Your Struggles</h3>
-            <p>
-                You faced challenges that many people would never
-                understand, yet you continued moving forward.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>🌷 Your Sacrifices</h3>
-            <p>
-                You put my happiness before your own countless times.
-                Every sacrifice became a blessing in my life.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>❤️ Your Love</h3>
-            <p>
-                Your love never had conditions. It remained strong,
-                patient, and endless through every stage of life.
-            </p>
-        </div>
+        <button class="btn" onclick="document.getElementById('journey').scrollIntoView({behavior:'smooth'})">
+            Our Journey ↓
+        </button>
     </div>
-</section>
 
-<section class="section" id="journey">
-    <h2>Our Journey Together</h2>
+    <section class="section">
+        <h2>What Makes You Special</h2>
 
-    <div class="timeline">
-        <div class="event">
-            👶 My Childhood — You protected me and gave me a safe world.
+        <div class="cards">
+            <div class="card">
+                <h3>💪 Your Struggles</h3>
+                <p>
+                    You faced challenges that many people would never
+                    understand, yet you continued moving forward.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>🌷 Your Sacrifices</h3>
+                <p>
+                    You put my happiness before your own countless times.
+                    Every sacrifice became a blessing in my life.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>❤️ Your Love</h3>
+                <p>
+                    Your love never had conditions. It remained strong,
+                    patient, and endless through every stage of life.
+                </p>
+            </div>
         </div>
+    </section>
 
-        <div class="event">
-            🎒 School Days — You encouraged me to learn and dream bigger.
-        </div>
+    <section class="section" id="journey">
+        <h2>Our Journey Together</h2>
 
-        <div class="event">
-            🌱 Difficult Times — You became both mother and father when I needed strength.
-        </div>
+        <div class="timeline">
+            <div class="event">
+                👶 My Childhood — You protected me and gave me a safe world.
+            </div>
 
-        <div class="event">
-            🎓 Today — At 19, I carry your lessons wherever I go.
+            <div class="event">
+                🎒 School Days — You encouraged me to learn and dream bigger.
+            </div>
+
+            <div class="event">
+                🌱 Difficult Times — You became both mother and father when I needed strength.
+            </div>
+
+            <div class="event">
+                🎓 Today — At 19, I carry your lessons wherever I go.
+            </div>
         </div>
+    </section>
+
+    <section class="section">
+        <h2>Some Journey Moments Captured In Frames</h2>
+
+        <div class="gallery">
+            <div class="photo" onclick="openLightbox(this)">
+                <img src="1.jpeg" alt="Photo 1">
+            </div>
+            <div class="photo" onclick="openLightbox(this)">
+                <img src="2.jpeg" alt="Photo 2">
+            </div>
+            <div class="photo" onclick="openLightbox(this)">
+                <img src="3.jpeg" alt="Photo 3">
+            </div>
+            <div class="photo" onclick="openLightbox(this)">
+                <img src="5.jpeg" alt="Photo 4">
+            </div>
+            <div class="photo" onclick="openLightbox(this)">
+                <img src="6.jpeg" alt="Photo 5">
+            </div>
+            <div class="photo" onclick="openLightbox(this)">
+                <img src="7.jpeg" alt="Photo 6">
+            </div>
+            <div class="photo" onclick="openLightbox(this)">
+                <img src="8.jpeg" alt="Photo 7">
+            </div>
+        </div>
+    </section>
+
+    <section class="final-message">
+        <h2>Thank You, Mom ❤️</h2>
+
+        <p>
+            Some people are blessed with a mother.
+            Some people are blessed with a father.
+            I was blessed with both in one extraordinary woman.
+            <br><br>
+            Your strength built my future.
+            Your sacrifices shaped my life.
+            Your love became my home.
+            <br><br>
+            Happy Father's Day to the woman who never stopped being my hero.
+        </p>
+    </section>
+
+    <footer>
+        Made with Love by Your Child ❤️
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox" onclick="closeLightboxOverlay(event)">
+        <span class="close-btn" onclick="closeLightbox()">&times;</span>
+        <div class="lightbox-content" id="lightbox-content-inner"></div>
     </div>
-</section>
 
-<section class="section">
-    <h2>Photo Gallery</h2>
+    <script>
+        function openLightbox(element) {
+            const lightbox = document.getElementById('lightbox');
+            const content = document.getElementById('lightbox-content-inner');
+            // For now, it copies the text/content. If you add <img> tags later, it will copy those too!
+            content.innerHTML = element.innerHTML;
 
-    <div class="gallery">
-        <div class="photo">Add Photo 1</div>
-        <div class="photo">Add Photo 2</div>
-        <div class="photo">Add Photo 3</div>
-        <div class="photo">Add Photo 4</div>
-        <div class="photo">Add Photo 5</div>
-        <div class="photo">Add Photo 6</div>
-    </div>
-</section>
+            // Add a new state to the browser history
+            history.pushState({ modalOpen: true }, "", "#photo");
+            lightbox.classList.add('active');
+        }
 
-<section class="final-message">
-    <h2>Thank You, Mom ❤️</h2>
+        function closeLightbox() {
+            // Trigger the browser back action
+            history.back();
+        }
 
-    <p>
-        Some people are blessed with a mother.
-        Some people are blessed with a father.
-        I was blessed with both in one extraordinary woman.
-        <br><br>
-        Your strength built my future.
-        Your sacrifices shaped my life.
-        Your love became my home.
-        <br><br>
-        Happy Father's Day to the woman who never stopped being my hero.
-    </p>
-</section>
+        function closeLightboxOverlay(event) {
+            if (event.target.id === 'lightbox') {
+                closeLightbox();
+            }
+        }
 
-<footer>
-    Made with Love by Your Child ❤️
-</footer>
+        // Listen for the browser back button
+        window.addEventListener('popstate', (e) => {
+            const lightbox = document.getElementById('lightbox');
+            if (lightbox.classList.contains('active')) {
+                lightbox.classList.remove('active');
+            }
+        });
 
-<script>
-function createHeart(){
-    const heart=document.createElement('div');
-    heart.classList.add('heart');
-    heart.innerHTML='❤️';
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
 
-    heart.style.left=Math.random()*100+'vw';
-    heart.style.animationDuration=(Math.random()*4+4)+'s';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 4 + 4) + 's';
 
-    document.body.appendChild(heart);
+            document.body.appendChild(heart);
 
-    setTimeout(()=>{
-        heart.remove();
-    },8000);
-}
+            setTimeout(() => {
+                heart.remove();
+            }, 8000);
+        }
 
-setInterval(createHeart,300);
-</script>
+        setInterval(createHeart, 300);
+    </script>
 
 </body>
+
 </html>
